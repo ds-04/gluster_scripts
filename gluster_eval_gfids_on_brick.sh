@@ -107,7 +107,7 @@ for GFID in $gfids; do
 		exit 1
 	    fi
 
-	    find "$BRICK" -inum "$INUM" ! -path \*.glusterfs/\*
+	    find "$BRICK" -inum "$INUM" ! -path \*.glusterfs/\* | tee -a ${TMP_LOG}
 	fi
 done
 
