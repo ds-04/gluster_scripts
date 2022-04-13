@@ -15,6 +15,10 @@ Scripts for Gluster filesystem administration
 
 # Misc - useful commands
 
-Count outstanding heal entries for a VOLNAME
+Count outstanding heal entries for a VOLNAME:
 
 ```gluster volume heal VOLNAME info | grep entries | awk '{sum +=$4} END {print sum}'```
+
+or summary count for each brick:
+
+```gluster volume heal VOLNAME statistics heal-count```
