@@ -49,7 +49,7 @@ BRICK="$1"
 VOLUME_NAME="$2"
 QUIET="$3"
 
-#NOTE LIMIT TO -A 1000 here ... meaning 1000 gfids, if you have more these won't be grabbed...
+#NOTE LIMIT TO -A 1000 here ... meaning 1000 gfids for the brick being examined, if you have more these won't be grabbed...
 ENTRIES=`gluster volume heal "${VOLUME_NAME}" info | grep -e "${HOSTNAME}.*${BRICK}" -A 1000 | awk '/^$/{exit}1' | egrep ".*gfid.*" -B1`
 
 gfids=`echo "${ENTRIES}" | grep gfid | cut -d ':' -f 2 | cut -d '>' -f 1`
