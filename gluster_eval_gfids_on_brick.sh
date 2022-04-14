@@ -12,10 +12,6 @@
 # 4. Print and store each path in log
 # 5. You can then (elsewhere) perform ls on the mounted volume (client) to trigger healing
 
-echo "SCRIPT BEING FIXED"
-echo "AWAIT UPDATE ON Github"
-exit 1
-
 
 TMP_LOG=`mktemp`
 
