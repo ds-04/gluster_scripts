@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (C) 2022 D Simpson - print out a simple status - gluster {volume,peer} status
+
 echo ""
 echo -e '\x1b[7m'
 echo $HOSTNAME
