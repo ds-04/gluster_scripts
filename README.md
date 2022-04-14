@@ -6,6 +6,8 @@ Scripts for Gluster filesystem administration
 
 - <b>gluster_eval_gfids_on_brick.sh</b> - Script to examine GFIDs from the ```gluster volume heal VOLNAME info``` output. The script has to be run on the host which has the brick mounted. It will run ```gluster volume heal VOLNAME info``` and work through the entries relating to the brick specified on invocation of the script. It will then provide the full path (as seen on a gluster client) printed to stdout and also in an ```mktemp``` log file. Using this path one can then run ```ls``` on the file/folder from the gluster client and invoke a heal. **The script will take some time to run as it is trawling through a brick for each GFID entry it has obtianed for that brick in the heal list - the time will also depend on your brick size and backend storage device**. This script is based upon Ben Tasker's script: https://snippets.bentasker.co.uk/page-1912061505-Resolving-Gluster-GFIDs-back-to-real-files-and-directories-BASH.html
 
+- <b>gluster_simple_status.sh</b> - Rudimentary script to print out  ```gluster {volume,peer} status```.
+
 
 # Other useful scripts:
 
