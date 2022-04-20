@@ -18,9 +18,11 @@ Example running on bricks 5,8 on the storage server (advise within screen/tmux):
 
 # Other useful scripts:
 
-- heal_gluster.sh - <i>"This script looks for gluster volumes, checks their heal statuses and tries to fix all the unhealed files/dirs."</i>
+- heal_gluster.sh - <i>"This script looks for gluster volumes, checks their heal statuses and tries to fix all the unhealed files/dirs."</i><br>
   https://gist.githubusercontent.com/pulecp/99f3b89c2c5f3c4ff0fa052b4531cdf2/raw/heal_gluster.sh
 
+- gfid-resolver.sh - <i>"Glusterfs GFID Resolver Turns a GFID into a real path in the brick"</i><br>
+  https://gist.githubusercontent.com/louiszuckerman/4392640/raw/gfid-resolver.sh
 
 # Misc - useful commands
 
@@ -31,3 +33,9 @@ Count outstanding heal entries for a VOLNAME:
 or summary count for each brick:
 
 ```gluster volume heal VOLNAME statistics heal-count```
+
+# Misc - useful links or bug reports
+
+USE INFORMATION IN THIS SECTION AT OWN RISK!
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1303153 - Bug 1303153 - Gluster creating 0 byte files 
