@@ -34,6 +34,12 @@ or summary count for each brick:
 
 ```gluster volume heal VOLNAME statistics heal-count```
 
+On a storage server, search for bricks that contain GFIDs, supplying multiple GFIDs - potentially useful for understanding heal problems
+
+```for GFID in {11111111-2222-3333-4444-555555555555,11111111-2222-3333-4444-555555555555}; do GFIDC12=`echo "$GFID" | cut -c1,2`; GFIDC34=`echo "$GFID" | cut -c3,4`; find /mnt/VOLNAME/brick*/brick/.glusterfs/${GFIDC12}/${GFIDC34}/ -iname ${GFID}; done```
+
+
+
 # Misc - useful links or bug reports
 
 USE INFORMATION IN THIS SECTION AT OWN RISK!
