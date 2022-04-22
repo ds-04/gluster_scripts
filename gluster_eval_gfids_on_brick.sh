@@ -13,8 +13,6 @@
 # 5. You can then (elsewhere) perform ls on the mounted volume (client) to trigger healing
 
 
-TMP_LOG=`mktemp`
-
 if [[ "$#" -lt "2" || "$#" -gt "3" ]]
 then
 cat << END
@@ -22,7 +20,9 @@ Glusterfs GFID resolver -- turns a GFID into a real file path
 
 Usage: $0 <brick-path> <volume> [-q]
 
-<brick-path> : the path to your glusterfs brick (required). ON THIS HOST.
+<brick-path> : The path to your glusterfs brick (required). ON THIS HOST.
+               It is assumed brickXX/brick will be within this path.
+               e.g. /mnt/VOL/brickXX/brick
 
 <volume> : volume containing the gfids you wish to resolve to a real path (required). ON THIS HOST.
 
@@ -48,6 +48,10 @@ fi
 BRICK="$1"
 VOLUME_NAME="$2"
 QUIET="$3"
+
+#setup mktemp
+BRICK_NUM=`echo ${BRICK} | egrep -o "brick[0-9][0-9]?"`
+TMP_LOG=`mktemp --suffix _${VOLUME_NAME}_${BRICK_NUM}`
 
 #NOTE LIMIT TO -A 1000 here ... meaning 1000 gfids for the brick being examined, if you have more these won't be grabbed...
 ENTRIES=`gluster volume heal "${VOLUME_NAME}" info | grep -e "${HOSTNAME}.*${BRICK}" -A 1000 | awk '/^$/{exit}1' | egrep ".*gfid.*" -B1`
