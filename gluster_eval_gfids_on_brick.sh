@@ -103,7 +103,7 @@ for GFID in $gfids; do
 	    INUM=`ls -i "$GFIDPATH" | cut -f 1 -d \ `  
 	    if [ "$INUM" == "" ]
 	    then
-		echo "Unable to get inode number for file. Do you lack appropriate permissions?" | tee -a ${TMP_LOG}
+		echo "Unable to get inode number for file. Do you lack appropriate permissions? Have you supplied the full brick path?" | tee -a ${TMP_LOG}
 		exit 1
 	    fi
 
