@@ -1,5 +1,5 @@
 # gluster_scripts
-Scripts for Gluster filesystem administration
+Scripts and notes for Gluster filesystem administration
 
 
 # In this repo (USE AT OWN RISK!):
