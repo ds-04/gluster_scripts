@@ -34,9 +34,15 @@ or summary count for each brick:
 
 ```gluster volume heal VOLNAME statistics heal-count```
 
-On a storage server, search for bricks that contain GFIDs, supplying multiple GFIDs - potentially useful for understanding heal problems
+
+On a storage server, search for bricks that contain GFIDs, supplying multiple GFIDs - potentially useful for understanding heal problems:
 
 ```for GFID in {11111111-2222-3333-4444-555555555555,11111111-2222-3333-4444-555555555555}; do GFIDC12=`echo "$GFID" | cut -c1,2`; GFIDC34=`echo "$GFID" | cut -c3,4`; find /mnt/VOLNAME/brick*/brick/.glusterfs/${GFIDC12}/${GFIDC34}/ -iname ${GFID}; done```
+
+
+Find gfid on brick, if filename is known:
+
+```find /mnt/VOLNAME/brickX/brick/.glusterfs -samefile /mnt/VOLNAME/brickX/brick/some_dir/some_file```
 
 
 Heal a split brain entry using GFID (check out the file on servers first and advise taking backup of file first!)
@@ -44,6 +50,7 @@ Heal a split brain entry using GFID (check out the file on servers first and adv
 ```gluster volume heal VOLNAME split-brain bigger-file gfid:11111111-2222-3333-4444-555555555555```
 
 See https://docs.gluster.org/en/main/Troubleshooting/resolving-splitbrain/
+
 
 # Misc - tips healing
 
