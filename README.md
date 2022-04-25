@@ -47,7 +47,7 @@ See https://docs.gluster.org/en/main/Troubleshooting/resolving-splitbrain/
 
 # Misc - tips healing
 
-<b>Scenario:</b> You've tracked a file down and you know it should be in the gluster client mount view, but it returns the below message upon ```stat``` using ```ls -l```:
+<b>Scenario:</b> You've tracked a file down and you know it should be in the gluster client mount view (other files are showing without issue in the directory), but the file of interest returns the below message upon ```stat``` using ```ls -l```:
 
 ```ls: cannot access some_example file: Transport endpoint is not connected```
 
