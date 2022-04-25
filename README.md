@@ -45,6 +45,16 @@ Heal a split brain entry using GFID (check out the file on servers first and adv
 
 See https://docs.gluster.org/en/main/Troubleshooting/resolving-splitbrain/
 
+# Misc - tips healing
+
+<b>Scenario:</b> You've tracked a file down and you know it should be in the gluster client mount view, but it returns the below message upon ```stat``` using ```ls -l```:
+
+```ls: cannot access some_example file: Transport endpoint is not connected```
+
+- Check all bricks are visible in ```gluster volume status VOLNAME```
+- Check all bricks are visible in ```gluster volume heal VOLNAME info``` and none show ```Transport endpoint is not connected```
+- Remount on the client
+- Try access again from client and hopefully it'll stat
 
 # Misc - useful links or bug reports
 
