@@ -63,6 +63,13 @@ See https://docs.gluster.org/en/main/Troubleshooting/resolving-splitbrain/
 - Remount on the client
 - Try access again from client and hopefully it'll stat
 
+<b>Scenario:</b> The heal list shows an entry, but you can't navigate to an intermediate folder within the path on the client.
+
+- Find the folder structure on the bricks, by incremtally listing e.g. ```ll /mnt/VOLNAME/brick*/brick/some/folder/```
+- Once you've found the folder name, cd to it on the client, in this example ```cd /mnt/gluster/some/folder; cd the_found_folder_previous_step```
+- That should invoke a heal on the directory, assuming nothing more is going on
+
+
 # Misc - useful links or bug reports
 
 USE INFORMATION IN THIS SECTION AT OWN RISK!
