@@ -51,6 +51,10 @@ Heal a split brain entry using GFID (check out the file on servers first and adv
 
 See https://docs.gluster.org/en/main/Troubleshooting/resolving-splitbrain/
 
+Get file attributes:
+
+```getfattr -d -m . -e hex  <path_to_file_on_brick NOT client mount>```
+
 
 # Misc - tips healing
 
