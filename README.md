@@ -73,6 +73,8 @@ Get file attributes:
 - Once you've found the folder name, cd to it on the client, in this example ```cd /mnt/gluster/some/folder; cd the_found_folder_previous_step```
 - That should invoke a heal on the directory, assuming nothing more is going on
 
+OR if the heal list is clear, launch full heal from CLI on the volume.
+
 
 # Misc - useful links or bug reports
 
