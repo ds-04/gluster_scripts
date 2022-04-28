@@ -83,3 +83,7 @@ USE INFORMATION IN THIS SECTION AT OWN RISK!
 https://bugzilla.redhat.com/show_bug.cgi?id=1303153 - Bug 1303153 - Gluster creating 0 byte files 
 
 ```find . -iname "*" -perm 1000``` quick find for the above empty sticky file issue, adapt accordingly
+
+find empty sticky (for above), confirm empty, on same brick find the GFID for this file
+
+```find /mnt/VOLNAME/brick1/brick/some/dir/path/to/examine -perm 1000 | while read line; do echo ${line} && du -hs ${line} && find /mnt/VOLNAME/brick1/brick/.glusterfs -samefile ${line}; echo ""; done```
