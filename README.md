@@ -82,6 +82,8 @@ USE INFORMATION IN THIS SECTION AT OWN RISK!
 
 https://docs.gluster.org/en/main/Administrator-Guide/Automatic-File-Replication/ - gluster.org replication
 
+https://docs.gluster.org/en/main/Troubleshooting/troubleshooting-afr/#ii-self-heal-is-stuck-not-getting-completed - gluster.org heal stuck
+
 https://bugzilla.redhat.com/show_bug.cgi?id=1303153 - Bug 1303153 - Gluster creating 0 byte files 
 
 ```find . -iname "*" -perm 1000``` quick find for the above empty sticky file issue, adapt accordingly
